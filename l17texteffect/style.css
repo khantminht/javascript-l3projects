@@ -1,0 +1,66 @@
+body{
+    height: 100vh;
+    color: #fff;
+    font-family: sans-serif;
+    background: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0.5));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: hidden;
+}
+
+h1{
+    color: #bbb;
+    font-size: 40px;
+}
+
+/* span.text-ani{
+    border-right: 5px solid #747474;
+    padding-right: 3px;
+    animation: cursorani 0.8s infinite;
+} */
+
+.cursor{
+    border-right: 5px solid #747474;
+    margin-right: 5px;
+    animation: cursorani 0.8s infinite;
+}
+
+@keyframes cursorani {
+    0%{
+        opacity: 0;
+    }50%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
+
+.red {color: red;}
+
+.skyblue {color: skyblue;}
+
+.violet {color: violet;}
+
+.yellow {color: yellow;}
+
+em{
+    color: #fff;
+    font-style: unset;
+
+    animation: textlightning 0.8s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes textlightning {
+    0%{
+        opacity: 0;
+    }50%{
+        opacity: 0;
+        text-shadow: 0 0 20px #fff;
+    }100%{
+        opacity: 1;
+    }
+}
