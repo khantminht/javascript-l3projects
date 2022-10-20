@@ -100,3 +100,7 @@ input.invalid{
     opacity: 0.8;
 }
 
+#result-container{
+    width: 90%;
+    display: none;
+}

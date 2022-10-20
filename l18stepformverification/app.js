@@ -1,19 +1,19 @@
 var getdots = document.getElementsByClassName('dot');
-
 var getpages = document.getElementsByClassName('page');
-console.log(getpages);
-
 var getform = document.getElementById('form');
 var getprevbtn = document.getElementById('prevbtn');
 var getnextbtn = document.getElementById('nextbtn');
 
+const getrstcontainer = document.getElementById('result-container');
+var objkeys = ['email', 'password', 'firstname' ,'lastname', 'dob', 'phone' ,'address'];
+var datas = [];
 
 var curidx = 0;
 
 showpage(curidx);
 
 function showpage(num){
-    console.log(num);
+    // console.log(num);
 
     getpages[num].style.display = 'block';
 
@@ -61,13 +61,37 @@ function gonow(num){
     curidx = curidx + num;
     if(curidx >= getpages.length){
         // getform.submit();
+
+        getform.style.display= 'none';
+        getrstcontainer.style.display='block';
+
+        result(datas);
         
         return false;
     }
 
     showpage(curidx);
- 
 }
+
+function* genfun(){
+    var index =0;
+
+    while(index < objkeys.length){
+        yield index++;
+    }
+}
+
+// console.log(genfun().next().value);
+
+let gen = genfun();
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
 
 function formvalidation(){
     var valid = true;
@@ -78,6 +102,20 @@ function formvalidation(){
         if(getcurinput[x].value === ''){
             getcurinput[x].classList.add('invalid');
             valid = false;
+        }else{
+            // console.log(getcurinput[x].value);
+
+            // Method1
+            const keys = objkeys[gen.next().value];
+            // console.log(keys);
+
+            const values = getcurinput[x].value;
+
+            const obj ={
+                [keys]:values
+            }
+
+            datas.push(obj);
         }
     }
 
@@ -88,4 +126,6 @@ function formvalidation(){
     return valid;
 }
 
-// 4FV
+function result(data){
+    console.log(data);
+}
