@@ -1,29 +1,44 @@
 var gettxtarea = document.getElementById('textarea');
 
+var getdivarea = document.getElementById('divarea')
+    getdivarea.contentEditable = true;
+    getdivarea.spellcheck = false;
 
-function boldfun(){
-    gettxtarea.style.fontWeight = 'bold';
-}
+var getbtns = document.querySelectorAll('.btn');
 
-function italicfun(){
-    gettxtarea.style.fontStyle = 'italic';
-}
+    getbtns.forEach(function(getbtn){
+        getbtn.addEventListener('click',function(){
+            // var getcommand = getbtn.getAttribute('data-command');
+            var getcommand = getbtn.dataset['command'];
+            // console.log(getcommand);
 
-function underlinefun(){
-    gettxtarea.style.textDecoration = 'underline';
-}
+            document.execCommand(getcommand, false, null);
+        })
+    });
 
-function leftalign(){
-    gettxtarea.style.textAlign = 'left';
-}
+// function boldfun(){
+//     gettxtarea.style.fontWeight = 'bold';
+// }
 
-function centeralign(){
-    gettxtarea.style.textAlign = 'center';
-}
+// function italicfun(){
+//     gettxtarea.style.fontStyle = 'italic';
+// }
 
-function rightalign(){
-    gettxtarea.style.textAlign = 'right';
-}
+// function underlinefun(){
+//     gettxtarea.style.textDecoration = 'underline';
+// }
+
+// function leftalign(){
+//     gettxtarea.style.textAlign = 'left';
+// }
+
+// function centeralign(){
+//     gettxtarea.style.textAlign = 'center';
+// }
+
+// function rightalign(){
+//     gettxtarea.style.textAlign = 'right';
+// }
 
 function upcasefun(){
     gettxtarea.style.textTransform = 'uppercase';
@@ -37,10 +52,12 @@ function capcasefun(){
     gettxtarea.style.textTransform = 'capitalize';
 }
 
-function clearfun(){
-    gettxtarea.style.fontWeight='normal';
-    gettxtarea.style.fontStyle = 'normal';
-    gettxtarea.style.textDecoration = 'none';
-    gettxtarea.style.textAlign = 'left';
-    gettxtarea.value='';
-}
+// function clearfun(){
+//     gettxtarea.style.fontWeight='normal';
+//     gettxtarea.style.fontStyle = 'normal';
+//     gettxtarea.style.textDecoration = 'none';
+//     gettxtarea.style.textAlign = 'left';
+//     gettxtarea.value='';
+// }
+
+// execCommand (aCommmentName, a, aValue);

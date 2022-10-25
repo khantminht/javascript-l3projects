@@ -20,7 +20,7 @@ h4 { color: steelblue;}
     margin-bottom: 10px;
     border-radius: 8px;
 
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 .tools:hover{
@@ -30,14 +30,22 @@ h4 { color: steelblue;}
 
 .tools .btn{
     border: 1px solid transparent;
+    /* border: none !important; */
     transition: all 0.3s;
 }
 
 .tools .btn:hover{
     color: #000;
-    background-color: transparent !important;
-    border: 1px solid #aaa;
+    background-color: #ddd !important;
+    border: 1px solid #bbb;
     border-radius: 18px !important;
+}
+
+.tools .btn:active{
+    color: #000 !important;
+    background-color: transparent !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
 }
 
 textarea{
@@ -65,4 +73,20 @@ textarea{
 .btn-submit:hover{
     border: 1px solid transparent;
     border-radius: 18px;
+}
+
+.divarea{
+    width: 100%;
+    min-height: 200px;
+    max-height: 350px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    
+    resize: vertical;
+    overflow-y: scroll;
+}
+
+.divarea:focus{
+    outline: 2px solid #ccc;
 }
