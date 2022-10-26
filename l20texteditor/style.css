@@ -19,7 +19,7 @@ h4 { color: steelblue;}
     border: 1px solid #eee;
     margin-bottom: 10px;
     border-radius: 8px;
-
+    user-select: none;
     transition: all 0.5s;
 }
 
@@ -79,6 +79,8 @@ textarea{
     width: 100%;
     min-height: 200px;
     max-height: 350px;
+    text-align: justify;
+
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
