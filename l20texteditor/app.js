@@ -19,6 +19,8 @@ var getbtns = document.querySelectorAll('.btn');
                 document.execCommand(getcommand,false,geturl);
             }else if(getcommand === 'foreColor'){
                 document.execCommand(getcommand, false, getbtn.value);
+            }else if(getcommand === 'backColor'){
+                document.execCommand(getcommand, false, getbtn.value);
             }else if(getcommand === 'paste'){
                 navigator.clipboard.readText().then(function(cliptext){
                     
